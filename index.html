@@ -606,6 +606,29 @@
 <style id='core-block-supports-inline-css'>
 .wp-elements-0f9a917aaaf9e5142759a0cd9ad57615 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--palette-color-2);}.wp-elements-55ff8384c2f11d654488cbd3468176d8 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--palette-color-4);}.wp-elements-107b0d8ff824143b424533d8ade8cd27 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--palette-color-4);}.wp-elements-a14dfd559293f654d748dbadee9e8b5b a:where(:not(.wp-element-button)){color:var(--wp--preset--color--palette-color-1);}
 </style>
+<script type="text/javascript">
+	// Select the toggle button, offcanvas element, and close button
+	const toggleButton = document.querySelector('.ct-toggle');
+	const closeButton = document.querySelector('.ct-toggle-close');
+	const offcanvas = document.getElementById('offcanvas');
+	const menuItems = document.querySelectorAll('.menu-item');
 
+	// Add event listener to show the offcanvas element
+	toggleButton.addEventListener('click', () => {
+	  offcanvas.classList.add('active');
+	});
+
+	// Add event listener to hide the offcanvas element
+	closeButton.addEventListener('click', () => {
+	  offcanvas.classList.remove('active');
+	});
+
+	// Add event listeners to all menu items to hide the offcanvas element on click
+	menuItems.forEach(item => {
+	  item.addEventListener('click', () => {
+	    offcanvas.classList.remove('active');
+	  });
+	});
+</script>
 </body>
 </html>
